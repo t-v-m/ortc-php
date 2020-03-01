@@ -19,8 +19,7 @@
 
     "require": {
         "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "~6.0",
-        "rhumsaa/uuid": "2.8.2"
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
         "codeception/codeception": "~2.0"

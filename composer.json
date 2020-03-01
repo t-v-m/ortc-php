@@ -20,7 +20,7 @@
     "require": {
         "php": ">=5.4.0",
         "guzzlehttp/guzzle": "~6.0",
-        "vinkla/hashids": "2.2.1"
+        "ramsey/uuid ": "3.9.3"
     },
     "require-dev": {
         "codeception/codeception": "~2.0"

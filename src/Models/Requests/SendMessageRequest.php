@@ -85,7 +85,7 @@ class SendMessageRequest extends OrtcRequest
         $chunks = str_split($this->getMessage(), $maxSize);
         $numberOfParts = count($chunks);
 
-        $randomString = $this->random_str(8);
+        $randomString = substr(sha1(Uuid::uuid4()->toString()), -8);
 
         for ($i = 0; $i < count($chunks); $i++) {
             $preString = strtr(
@@ -168,19 +168,5 @@ class SendMessageRequest extends OrtcRequest
     public function getResponseHandler()
     {
         return new SendMessageResponseHandler();
-    }
-
-    public function random_str(int $length = 64)
-    {
-        $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        if ($length < 1) {
-            throw new \RangeException("Length must be a positive integer");
-        }
-        $pieces = [];
-        $max = mb_strlen($keyspace, '8bit') - 1;
-        for ($i = 0; $i < $length; ++$i) {
-            $pieces []= $keyspace[random_int(0, $max)];
-        }
-        return implode('', $pieces);
     }
 }

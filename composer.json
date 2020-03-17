@@ -19,8 +19,8 @@
 
     "require": {
         "php": ">=5.4.0",
-        "ramsey/uuid": "~2.8",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "ramsey/uuid": "~2.8"
     },
     "require-dev": {
         "codeception/codeception": "~2.0"
